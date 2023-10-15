@@ -1,9 +1,12 @@
 package com.example.qrscanner3.ui
 
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.qrscanner3.Manifest
 import com.example.qrscanner3.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // init properties
         mainActivityViewModel = ViewModelProvider(this@MainActivity)[MainActivityViewModel::class.java]
 
+        // init properties
         initClickFunctions()
     }
 
